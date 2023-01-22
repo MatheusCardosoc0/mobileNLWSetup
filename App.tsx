@@ -10,6 +10,7 @@ import {
 import { Loading } from './src/components/Loading';
 import { Home } from './src/screens/Home';
 import { HabitDay } from './src/components/HabitDay';
+import { Routes } from './src/routes';
 
 export default function App() {
 
@@ -26,7 +27,7 @@ export default function App() {
 
   return (
     <>
-      <Home />
+      <Routes />
       <StatusBar style="light"
       backgroundColor='transparent' translucent  />
     </>
