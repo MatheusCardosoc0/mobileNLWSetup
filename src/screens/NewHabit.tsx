@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { ScrollView, Text, TextInput, View } from "react-native";
+import { ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { BackButton } from "../components/BackButton";
 import { Checkbox } from "../components/CheackBox";
+import {Feather} from '@expo/vector-icons'
 
 const weekDays = ["domingo", "segunda", "terça", "quarta", "quinta", "sexta", "sabado"]
 
@@ -19,7 +20,8 @@ export function NewHabit() {
 
   return (
     <View className="flex-1 bg-background px-4 pt-16">
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView showsVerticalScrollIndicator={false}
+      contentContainerStyle={{paddingBottom: 100}}>
         <BackButton />
 
         <Text className="mt-6 text-white font-extrabold text-3xl">
@@ -44,6 +46,16 @@ export function NewHabit() {
             checked={day.includes(i)}
             onPress={() => toggleWeekDays(i)} />
         ))}
+
+        <TouchableOpacity className="w-full h-14 flex flex-row items-center justify-center bg-green-600 rounded-md mt-6">
+          <Feather name="check"
+          size={20}
+          color="white" />
+
+        <Text className="font-semibold text-basetext-white ml-2 text-white">
+          Confirmar
+        </Text>
+        </TouchableOpacity>
       </ScrollView>
     </View>
   )
